@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap');
+.input {
+  @apply w-full px-4 py-2 rounded-lg border border-slate-300
+  focus:outline-none focus:ring-2 focus:ring-cyan-500
+  focus:border-cyan-500 transition;
+}
+
+.label {
+  @apply block text-sm font-semibold text-slate-600 mb-1;
+}
