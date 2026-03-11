@@ -8,9 +8,9 @@ export default function Footer() {
           <p className="text-slate-400 text-sm">Empowering citizens with real-time urban data.</p>
         </div>
         <div className="flex gap-8 text-sm text-slate-500 font-medium">
-          <a href="#" className="hover:text-cyan-500">About</a>
-          <a href="#" className="hover:text-cyan-500">Privacy Policy</a>
-          <a href="#" className="hover:text-cyan-500">Contact</a>
+          <a href="/" className="hover:text-cyan-500">About</a>
+          <a href="/" className="hover:text-cyan-500">Privacy Policy</a>
+          <a href="/" className="hover:text-cyan-500">Contact</a>
         </div>
         <p className="text-slate-400 text-xs">© 2026 SmartCity. All rights reserved.</p>
       </div>
