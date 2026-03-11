@@ -2,8 +2,7 @@
 
 import AddHospitalModal from "../components/AddHospitalModal";
 import EditHospitalModal from "../components/EditHospitalModal";
-
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { HiOutlinePencil, HiOutlineTrash, HiOutlinePlus } from "react-icons/hi";
 
 export default function Hospitals() {
@@ -25,7 +24,7 @@ export default function Hospitals() {
   const isAdmin = role === "ADMIN" || role === "ROLE_ADMIN";
 
   // 🔥 FETCH HOSPITALS
-  const fetchHospitals = async () => {
+  const fetchHospitals = useCallback(async () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
@@ -58,7 +57,7 @@ export default function Hospitals() {
     } finally {
       setLoading(false);
     }
-  };
+}, [city, search]);
   const fetchNearestHospitals = async () => {
   if (!userLocation) {
     alert("Location not available");
@@ -94,11 +93,9 @@ const res = await fetch(
     setLoading(false);
   }
 };
-
-
-  useEffect(() => {
-    fetchHospitals();
-  }, [city, search]);
+useEffect(() => {
+  fetchHospitals();
+}, [fetchHospitals]);
 
   
 useEffect(() => {

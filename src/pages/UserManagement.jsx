@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { HiOutlinePlus, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
 
 
@@ -19,7 +19,7 @@ export default function UserManagement() {
   const role = localStorage.getItem("role");
 
   // ✅ HOOKS MUST COME FIRST (NO CONDITIONS)
-  const fetchUsers = async () => {
+const fetchUsers = useCallback(async () => {
     setLoading(true);
     try {
       const res = await fetch("http://localhost:8080/api/admin/users", {
@@ -41,13 +41,13 @@ export default function UserManagement() {
     } finally {
       setLoading(false);
     }
-  };
+}, [token]);
 
-  useEffect(() => {
-    if (role === "ADMIN") {
-      fetchUsers();
-    }
-  }, [role]);
+useEffect(() => {
+  if (role === "ADMIN") {
+    fetchUsers();
+  }
+}, [role, fetchUsers]);
 
   // ✅ CONDITIONAL RENDERING COMES AFTER HOOKS
   if (role !== "ADMIN") {

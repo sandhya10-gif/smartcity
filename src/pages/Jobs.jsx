@@ -3,7 +3,7 @@
 import AddJobModal from "../components/AddJobModal";
 import EditJobModal from "../components/EditJobModal";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { HiOutlinePlus, HiOutlinePencil, HiOutlineTrash } from "react-icons/hi";
 
 export default function Jobs() {
@@ -19,7 +19,7 @@ export default function Jobs() {
   const isAdmin = role === "ADMIN";
 
   // 🔥 FETCH JOBS
-  const fetchJobs = async () => {
+ const fetchJobs = useCallback(async () => {
     setLoading(true);
     try {
       const token = localStorage.getItem("token");
@@ -51,11 +51,11 @@ export default function Jobs() {
     } finally {
       setLoading(false);
     }
-  };
+}, [city, search]);
 
-  useEffect(() => {
-    fetchJobs();
-  }, [city, search]);
+useEffect(() => {
+  fetchJobs();
+}, [fetchJobs]);
 
   // 🗑 DELETE (ADMIN)
   const handleDelete = async (id) => {
