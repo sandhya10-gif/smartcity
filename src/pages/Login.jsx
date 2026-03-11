@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaFacebookF, FaApple } from "react-icons/fa";
 import { HiOutlineMail, HiOutlineLockClosed } from "react-icons/hi";
-import { IoMdAirplane } from "react-icons/io";
 
 export default function Login() {
   const [email, setEmail] = useState("");

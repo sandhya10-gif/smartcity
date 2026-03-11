@@ -55,7 +55,7 @@ export default function Jobs() {
 
   useEffect(() => {
     fetchJobs();
-  }, [city, search]);
+  }, [city, search,fetchJobs]);
 
   // 🗑 DELETE (ADMIN)
   const handleDelete = async (id) => {
