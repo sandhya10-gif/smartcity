@@ -98,7 +98,7 @@ const res = await fetch(
 
   useEffect(() => {
     fetchHospitals();
-  }, [city, search, fetchHospitals]);
+  }, [city, search]);
 
   
 useEffect(() => {

@@ -47,7 +47,7 @@ export default function UserManagement() {
     if (role === "ADMIN") {
       fetchUsers();
     }
-  }, [fetchUsers, role]);
+  }, [role]);
 
   // ✅ CONDITIONAL RENDERING COMES AFTER HOOKS
   if (role !== "ADMIN") {
