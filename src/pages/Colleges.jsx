@@ -104,7 +104,7 @@ const fetchColleges = useCallback(async (priority = null) => {
           distance: item.distance,
         }))
       );
-    } catch (err) {
+    } catch (err) { 
       console.error(err);
     } finally {
       setLoading(false);
