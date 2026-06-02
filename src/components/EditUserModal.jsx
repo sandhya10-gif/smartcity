@@ -11,7 +11,7 @@ export default function EditUserModal({ user, onClose, onUpdate }) {
   const update = async () => {
     try {
       const res = await fetch(
-        `http://localhost:8080/api/admin/users/${user.id}`,
+        `https://smartcitybackend-1.onrender.com/api/admin/users/${user.id}`,
         {
           method: "PUT",
           headers: {

@@ -13,7 +13,7 @@ export default function AddUserModal({ onClose, onSave }) {
 
 
   const submit = async () => {
-    const res = await fetch("http://localhost:8080/api/admin/users", {
+    const res = await fetch("https://smartcitybackend-1.onrender.com/api/admin/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -20,7 +20,7 @@ export default function AddHospitalModal({ onClose, onSave }) {
     try {
       const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:8080/api/hospitals", {
+      const res = await fetch("https://smartcitybackend-1.onrender.com/api/hospitals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -22,7 +22,7 @@ export default function UserManagement() {
 const fetchUsers = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:8080/api/admin/users", {
+      const res = await fetch("https://smartcitybackend-1.onrender.com/api/admin/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -29,7 +29,7 @@ export default function Jobs() {
       if (search) params.append("search", search);
 
       const url =
-        `http://localhost:8080/api/jobs` +
+        `https://smartcitybackend-1.onrender.com/api/jobs` +
         (params.toString() ? `?${params.toString()}` : "");
 
       const res = await fetch(url, {
@@ -64,7 +64,7 @@ useEffect(() => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:8080/api/jobs/${id}`,
+      `https://smartcitybackend-1.onrender.com/api/jobs/${id}`,
       {
         method: "DELETE",
         headers: {

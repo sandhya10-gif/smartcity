@@ -13,7 +13,7 @@ export default function Register() {
   e.preventDefault();
 
   try {
-    const res = await fetch("http://localhost:8080/api/auth/register", {
+    const res = await fetch("https://smartcitybackend-1.onrender.com/api/auth/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

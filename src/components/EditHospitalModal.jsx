@@ -12,7 +12,7 @@ export default function EditHospitalModal({ hospital, onClose, onUpdate }) {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:8080/api/hospitals/${hospital.id}`,
+      `https://smartcitybackend-1.onrender.com/api/hospitals/${hospital.id}`,
       {
         method: "PUT",
         headers: {

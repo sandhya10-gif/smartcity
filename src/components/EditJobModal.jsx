@@ -10,7 +10,7 @@ export default function EditJobModal({ job, onClose, onUpdate }) {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:8080/api/jobs/${job.id}`,
+      `https://smartcitybackend-1.onrender.com/api/jobs/${job.id}`,
       {
         method: "PUT",
         headers: {

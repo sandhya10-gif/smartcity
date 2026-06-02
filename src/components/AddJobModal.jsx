@@ -16,7 +16,7 @@ export default function AddJobModal({ onClose, onSave }) {
   try {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:8080/api/jobs", {
+    const res = await fetch("https://smartcitybackend-1.onrender.com/api/jobs", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

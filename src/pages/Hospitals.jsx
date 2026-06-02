@@ -34,7 +34,7 @@ export default function Hospitals() {
       if (search) params.append("search", search);
 
       const url =
-        "http://localhost:8080/api/hospitals" +
+        "https://smartcitybackend-1.onrender.com/api/hospitals" +
         (params.toString() ? `?${params.toString()}` : "");
 
       const res = await fetch(url, {
@@ -69,7 +69,7 @@ export default function Hospitals() {
     const token = localStorage.getItem("token");
 
 const res = await fetch(
-  `http://localhost:8080/api/hospitals/nearest?lat=${userLocation.lat}&lon=${userLocation.lon}`,
+  `https://smartcitybackend-1.onrender.com/api/hospitals/nearest?lat=${userLocation.lat}&lon=${userLocation.lon}`,
   {
     headers: {
       Authorization: `Bearer ${token}`,
@@ -120,7 +120,7 @@ useEffect(() => {
       const token = localStorage.getItem("token");
 
       const res = await fetch(
-        `http://localhost:8080/api/hospitals/${id}`,
+        `https://smartcitybackend-1.onrender.com/api/hospitals/${id}`,
         {
           method: "DELETE",
           headers: {

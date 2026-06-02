@@ -11,7 +11,7 @@ export default function EditCollegeModal({ college, onClose, onUpdate }) {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:8080/api/colleges/${college.id}`,
+      `https://smartcitybackend-1.onrender.com/api/colleges/${college.id}`,
       {
         method: "PUT",
         headers: {

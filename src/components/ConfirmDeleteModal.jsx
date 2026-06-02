@@ -2,7 +2,7 @@ export default function ConfirmDeleteModal({ user, onClose, onConfirm }) {
   const token = localStorage.getItem("token");
 
   const remove = async () => {
-    await fetch(`http://localhost:8080/api/admin/users/${user.id}`, {
+    await fetch(`https://smartcitybackend-1.onrender.com/api/admin/users/${user.id}`, {
       method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
     });

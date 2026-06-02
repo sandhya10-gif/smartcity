@@ -39,7 +39,7 @@ const fetchColleges = useCallback(async (priority = null) => {
     if (category) params.append("category", category);
     if (priority) params.append("priority", priority);
 
-    const url = `http://localhost:8080/api/colleges${
+    const url = `https://smartcitybackend-1.onrender.com/api/colleges${
       params.toString() ? "?" + params.toString() : ""
     }`;
 
@@ -88,7 +88,7 @@ const fetchColleges = useCallback(async (priority = null) => {
     setLoading(true);
     try {
       const res = await fetch(
-        `http://localhost:8080/api/colleges/nearest?lat=${userLocation.lat}&lon=${userLocation.lon}`
+        `https://smartcitybackend-1.onrender.com/api/colleges/nearest?lat=${userLocation.lat}&lon=${userLocation.lon}`
       );
 
       if (!res.ok) {
@@ -124,7 +124,7 @@ useEffect(() => {
     try {
       const token = localStorage.getItem("token");
       const res = await fetch(
-        `http://localhost:8080/api/colleges/${id}`,
+        `https://smartcitybackend-1.onrender.com/api/colleges/${id}`,
         {
           method: "DELETE",
           headers: { Authorization: `Bearer ${token}` },

@@ -18,7 +18,7 @@ export default function AddCollegeModal({ onClose, onSave }) {
   const handleSubmit = async () => {
     const token = localStorage.getItem("token");
 
-    const res = await fetch("http://localhost:8080/api/colleges", {
+    const res = await fetch("https://smartcitybackend-1.onrender.com/api/colleges", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

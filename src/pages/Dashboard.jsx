@@ -22,7 +22,7 @@ export default function Dashboard() {
 
   const fetchStats = async (token) => {
     try {
-      const res = await fetch("http://localhost:8080/api/dashboard/stats", {
+      const res = await fetch("https://smartcitybackend-1.onrender.com/api/dashboard/stats", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
